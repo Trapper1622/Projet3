@@ -17,33 +17,63 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     <!-- Favicon -->
-    <link rel="icon" href="#" type="images/x-icon">
+    <link rel="icon" href="images/favicon.png" type="images/x-icon">
 
   </head>
   <body>
     <!-- En tete -->
     <header>
-
+      <img src="images/Velib-couple.png" alt="couple à velo">
     </header>
 
     <!-- slider -->
-    <section>
-
+    <section id="presentation">
+      <h1>Bienvenue sur LocaBike</h1>
+      <p>Besoin d'un vélo sur lyon ? LocaBike est là pour vous !</p>
+      <div id="block-slider">
+        <div id="slider">
+          <img src="images/slider1.png" alt="images explication réservation">
+            <div id="flecheGauche">
+              <i class="fas fa-chevron-left fa-3x" aria-hidden="true"></i>
+            </div>
+            <div id="flecheDroite">
+              <i class="fas fa-chevron-right fa-3x" aria-hidden="true"></i>
+            </div>
+        </div>
+      </div>
     </section>
 
     <!-- MAP -->
-    <section>
-
+    <section id="googleMap">
+      <div id="map"></div>
+      <div id="reservation">
+        <div id="reserver">
+          <h2>Détails de la station</h2>
+          <div id="information"></div>
+          <div id="buttonReservation">
+            <button>Réserver</button>
+          </div>
+        </div>
+        <div id="confirmation">
+          <h2>Réservation</h2>
+          <p>Pour que la réservation soit confirmée, veuillez apposer votre signature ci-dessous, puis validez.</p>
+          <canvas id="canvas"></canvas>
+          <button id="effacer">effacer</button>
+          <div id="buttonConfirmation">
+            <button id="valider">Valider</button>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Timer -->
     <section>
 
     </section>
-    
+
     <!-- Footer -->
     <footer>
-
+      <p>© Copyright 2018 LocaBike</p>
     </footer>
 
     <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>

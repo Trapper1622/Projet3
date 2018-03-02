@@ -1,0 +1,166 @@
+/* Couleur :
+          #774F38   rgb(119, 79, 56)
+          #E08E79   rgb(224, 142, 121)
+          #F1D4AF   rgb(241, 212, 175)
+          #ECE5CE   rgb(236, 229, 206)
+          #C5E0DC   rgb(197, 224, 220)
+*/
+
+/* Général */
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #ECE5CE;
+}
+
+/* HEADER */
+
+header {
+  background-color: #E08E79;
+  text-align: center;
+}
+
+header img {
+  max-width: 80%;
+  margin: 15px 0;
+}
+
+/* PRESENTATION */
+
+#presentation h1 {
+  text-align: center;
+  font-size: 50px;
+  color: #774F38;
+}
+
+#presentation p {
+  text-align: center;
+  font-size: 20px;
+  color: #774F38;
+}
+
+/* SLIDER */
+
+#block-slider {
+  display: flex;
+  justify-content: center;
+}
+
+#slider {
+  position: relative;
+  max-width: 95%;
+  margin-bottom: 100px;
+}
+
+#slider img {
+  max-width: 100%;
+  height: auto;
+}
+
+#flecheGauche {
+  position: absolute;
+  top: 45%;
+  left: 2%;
+  color: #E08E79;
+}
+
+#flecheDroite {
+  position: absolute;
+  top: 45%;
+  right: 2%;
+  color: #E08E79;
+}
+
+#flecheGauche:hover, #flecheDroite:hover {
+  color: #ECE5CE;
+}
+
+/* GOOGLE MAP */
+
+#googleMap {
+  display: flex;
+  justify-content: space-around;
+  padding-bottom: 50px;
+}
+
+#map {
+  width: 60%;
+  height: 600px;
+  border: 3px solid #E08E79;
+}
+
+/* block infos */
+#reservation {
+  background-color: #C5E0DC;
+  color: #774F38;
+  width: 25%;
+  position: relative;
+  border: 3px solid #E08E79;
+  /* display: none; */
+}
+
+#reservation h2 {
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 40px;
+  color: #774F38;
+}
+
+/* block contenant les infos après click sur marker */
+
+#information {
+  padding: 0 10px;
+}
+
+/* button pour réserver et confirmer la réservation */
+
+#buttonReservation, #buttonConfirmation {
+  position: absolute;
+  bottom: 15%;
+  left: 43%;
+}
+
+#buttonReservation button, #buttonConfirmation button {
+  padding: 5px;
+}
+
+/* block confirmation de réservation */
+
+#confirmation {
+  /* display: none; */
+}
+
+#confirmation p {
+  padding: 0 20px;
+  text-align: center;
+}
+
+#effacer {
+  position: absolute;
+  left: 43%;
+  margin-top: 5px;
+}
+
+#canvas {
+  width: 250px;
+  max-width: 95%;
+  height: 150px;
+  border: 1px solid #E08E79;
+  background-color: #ECE5CE;
+  margin: auto;
+  display: block;
+}
+
+/* FOOTER */
+
+footer {
+  height: 80px;
+  line-height: 80px;
+  background-color: #E08E79;
+}
+
+footer p {
+  text-align: center;
+  color: #774F38;
+}
