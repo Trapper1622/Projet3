@@ -156,6 +156,30 @@ header img {
   display: block;
 }
 
+/* --------------- section timer --------------- */
+
+#timer {
+  background-color: #ECE5CE;
+  padding-bottom: 100px;
+  /* display: none; */
+}
+
+#block-timer {
+  width: 70%;
+  margin: auto;
+  background-color: #C5E0DC;
+  border: 2px solid #E08E79;
+}
+
+#time {
+  color: #774F38;
+  text-align: center;
+}
+
+#time span {
+  font-weight: bold;
+}
+
 /* FOOTER */
 
 footer {
