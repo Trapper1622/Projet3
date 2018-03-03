@@ -6,7 +6,7 @@
           #C5E0DC   rgb(197, 224, 220)
 */
 
-/* Général */
+/* --------------- GENERAL --------------- */
 
 body {
   margin: 0;
@@ -18,7 +18,7 @@ h1, h2, h3, h4, h5, h6, p {
   font-family: 'Old Standard TT', serif;
 }
 
-/* HEADER */
+/* --------------- HEADER --------------- */
 
 header {
   background-color: #E08E79;
@@ -30,7 +30,7 @@ header img {
   margin: 15px 0;
 }
 
-/* PRESENTATION */
+/* --------------- PRESENTATION --------------- */
 
 #presentation h1 {
   text-align: center;
@@ -44,7 +44,7 @@ header img {
   color: #774F38;
 }
 
-/* SLIDER */
+/* --------------- SLIDER --------------- */
 
 #block-slider {
   display: flex;
@@ -80,7 +80,7 @@ header img {
   color: #ECE5CE;
 }
 
-/* GOOGLE MAP */
+/* --------------- MAP --------------- */
 
 #googleMap {
   display: flex;
@@ -94,7 +94,7 @@ header img {
   border: 3px solid #E08E79;
 }
 
-/* block infos */
+/* --------------- BLOCK INFO --------------- */
 #reservation {
   background-color: #C5E0DC;
   color: #774F38;
@@ -156,7 +156,7 @@ header img {
   display: block;
 }
 
-/* --------------- section timer --------------- */
+/* --------------- TIMER --------------- */
 
 #timer {
   background-color: #ECE5CE;
@@ -180,7 +180,7 @@ header img {
   font-weight: bold;
 }
 
-/* FOOTER */
+/* --------------- FOOTER --------------- */
 
 footer {
   height: 80px;
