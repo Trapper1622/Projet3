@@ -1,91 +1,92 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>LocaBike</title>
-    <meta name="description" content="Location de vélo à Lyon. Bienvenue sur LocaBike. Vous avez besoin d'un vélo ? LocaBike est la pour vous !" />
-    <meta name="viewport" content="initial-scale=1.0" />
-    <link rel="stylesheet" href="css/style.css">
 
-    <!-- ref -->
-    <meta property="og:title" content="Bike Attitude"/>
-    <meta property="og:type" content="website"/>
-    <meta property="og:url" content="http://www.tristanb.fr/projet3"/>
-    <meta property="og:image" content="http://www.tristanb.fr/Projet3/images/velo.png"/>
+<head>
+  <meta charset="utf-8">
+  <title>LocaBike</title>
+  <meta name="description" content="Location de vélo à Lyon. Bienvenue sur LocaBike. Vous avez besoin d'un vélo ? LocaBike est la pour vous !" />
+  <meta name="viewport" content="initial-scale=1.0" />
+  <link rel="stylesheet" href="css/style.css">
 
-    <!-- [if IE] -->
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- ref -->
+  <meta property="og:title" content="Bike Attitude" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="http://www.tristanb.fr/projet3" />
+  <meta property="og:image" content="http://www.tristanb.fr/Projet3/images/velo.png" />
 
-    <!-- Favicon -->
-    <link rel="icon" href="images/favicon.png" type="images/x-icon">
+  <!-- [if IE] -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-    <!-- Font -->
-    <link href="https://fonts.googleapis.com/css?family=Old+Standard+TT" rel="stylesheet">
+  <!-- Favicon -->
+  <link rel="icon" href="images/favicon.png" type="images/x-icon">
 
-  </head>
-  <body>
-    <!-- TODO: En tete -->
-    <header>
-      <img src="images/Velib-couple.png" alt="couple à velo">
-    </header>
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css?family=Old+Standard+TT" rel="stylesheet">
 
-    <!-- TODO: slider -->
-    <section id="presentation">
-      <h1>Bienvenue sur LocaBike</h1>
-      <p>Besoin d'un vélo sur lyon ? LocaBike est là pour vous !</p>
-      <div id="block-slider">
-        <div id="slider">
-          <img src="images/slider1.png" alt="images explication réservation">
-            <div id="flecheGauche">
-              <i class="fas fa-chevron-left fa-3x" aria-hidden="true"></i>
-            </div>
-            <div id="flecheDroite">
-              <i class="fas fa-chevron-right fa-3x" aria-hidden="true"></i>
-            </div>
+</head>
+
+<body>
+  <!-- En tete -->
+  <header>
+    <img src="images/Velib-couple.png" alt="couple à velo">
+  </header>
+
+  <!-- slider -->
+  <section id="presentation">
+    <h1>Bienvenue sur LocaBike</h1>
+    <p>Besoin d'un vélo sur lyon ? LocaBike est là pour vous !</p>
+    <div id="block-slider">
+      <div id="slider">
+        <img src="images/slider1.png" alt="images explication réservation">
+        <div id="flecheGauche">
+          <i class="fas fa-chevron-left fa-3x" aria-hidden="true"></i>
+        </div>
+        <div id="flecheDroite">
+          <i class="fas fa-chevron-right fa-3x" aria-hidden="true"></i>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- TODO: MAP -->
-    <section id="googleMap">
-      <div id="map"></div>
-      <div id="reservation">
-        <div id="reserver">
-          <h2>Détails de la station</h2>
-          <div id="information"></div>
-          <div id="buttonReservation">
-            <button>Réserver</button>
-          </div>
-        </div>
-        <div id="confirmation">
-          <h2>Réservation</h2>
-          <p>Pour que la réservation soit confirmée, veuillez apposer votre signature ci-dessous, puis validez.</p>
-          <canvas id="canvas"></canvas>
-          <button id="effacer">effacer</button>
-          <div id="buttonConfirmation">
-            <button id="valider">Valider</button>
-          </div>
+  <!-- MAP -->
+  <section id="googleMap">
+    <div id="map"></div>
+    <div id="reservation">
+      <div id="reserver">
+        <h2>Détails de la station</h2>
+        <div id="information"></div>
+        <div id="buttonReservation">
+          <button>Réserver</button>
         </div>
       </div>
-    </section>
-
-    <!-- TODO: Timer -->
-    <section id="timer">
-      <div id="block-timer">
-        <p id="time"></p>
+      <div id="confirmation">
+        <h2>Réservation</h2>
+        <p>Pour que la réservation soit confirmée, veuillez apposer votre signature ci-dessous, puis validez.</p>
+        <canvas id="canvas"></canvas>
+        <button id="effacer">effacer</button>
+        <div id="buttonConfirmation">
+          <button id="valider">Valider</button>
+        </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- TODO: Footer -->
-    <footer>
-      <p>© Copyright 2018 LocaBike</p>
-    </footer>
+  <!-- Timer -->
+  <section>
 
-    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
-    <script type="text/javascript" src="js/main.js"></script>
-    <script src="js/ajax.js"></script>
-    <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
-    <script type="text/javascript" src="js/map.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDAF6HL7NXNXHmU8sSm8-gdfih2g1Hyab4&callback=initMap" async defer></script>
-  </body>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© Copyright 2018 LocaBike</p>
+  </footer>
+
+  <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+  <script src="js/ajax.js"></script>
+  <script type="text/javascript" src="js/main.js"></script>
+  <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
+  <script type="text/javascript" src="js/map.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDAF6HL7NXNXHmU8sSm8-gdfih2g1Hyab4&callback=initMap" async defer></script>
+</body>
+
 </html>
