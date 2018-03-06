@@ -2,7 +2,7 @@
 
 //Exécute un appel ajaxGET
 //Prend en paramètre l'URL cible et la fonction callback appelée en cas de succès
-function ajaxGET(url, callback) {
+function ajaxGet(url, callback) {
   var req = new XMLHttpRequest();
   req.open("GET", url);
   req.addEventListener("load", function () {

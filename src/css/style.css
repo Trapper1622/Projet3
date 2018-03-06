@@ -101,7 +101,7 @@ header img {
   width: 25%;
   position: relative;
   border: 3px solid #E08E79;
-  /* display: none; */
+  display: none;
 }
 
 #reservation h2 {
@@ -132,7 +132,7 @@ header img {
 /* block confirmation de réservation */
 
 #confirmation {
-  /* display: none; */
+  display: none;
 }
 
 #confirmation p {
@@ -161,7 +161,7 @@ header img {
 #timer {
   background-color: #ECE5CE;
   padding-bottom: 100px;
-  /* display: none; */
+  display: none;
 }
 
 #block-timer {

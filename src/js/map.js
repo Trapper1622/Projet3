@@ -1,6 +1,6 @@
 /* jshint esversion: 6 */
 
-ajaxGET(
+ajaxGet(
   "https://api.jcdecaux.com/vls/v1/stations?contract=Lyon&apiKey=1ee3867fba30e0756919f69563ad164308c25536",
   (reponse) => {
     const api = JSON.parse(reponse);
@@ -48,14 +48,60 @@ ajaxGET(
           api[i].status = "FERMÉE";
         }
 
-        info.innerHTML = `
+        infos.innerHTML = `
           <p>Adresse : <span>${api[i].address}</span></p>
           <p>Etat de la station: <span>${api[i].status}</span></p>
           <p>Vélo disponibles: <span>${api[i].available_bikes}</span></p>
-          <p>Places disponibles: <span>${api[i].available_bikes_stands}</span></p>`;
+          <p>Places disponibles: <span>${api[i].available_bikes_stands}</span></p>
+          `;
       });
       markers = markers.concat(marker);
     }
+    // --------------- regroupement des markers ---------------
+    // --------------------------------------------------------
+
+    const markerCluster = new MarkerClusterer(map, markers,
+            {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
+
+    const reservation = document.querySelector("#reservation");
+    const infos = document.querySelector("#informations");
+    const buttonConfirm = document.querySelector("#valider");
+    const sectionTimer = document.querySelector("#timer");
+    const buttonReserver = document.querySelector("#buttonReservation").querySelector("button");
+
+    // --------------- listener button réserver ---------------
+    // --------------------------------------------------------
+
+    buttonReserver.addEventListener("click", () => {
+      if (stationClick.available_bikes > 0) {
+        confirmation.style.display = "block";
+        reserver.style.display = "none";
+      }
+      else {
+        confirmation.style.display = "none";
+        reserver.style.diplay = "block";
+        alert("Aucun vélo disponible dans cette station");
+      }
+    });
+
+    // --------------- listener button valider ---------------
+    // -------------------------------------------------------
+
+    let intervalID = 0;
+    let time;
+    const textTimer = document.querySelector("#time");
+    buttonConfirm.addEventListener("click", function () {
+      clearInterval(intervalID);
+      reservation.style.diplay = "none";
+      sectionTimer.scrollIntoView();
+      const address = stationClick.address;
+      time = 1200;
+
+      // --------------- function timer réservation ---------------
+      // ----------------------------------------------------------
+
+
+    });
   }
 );
 
