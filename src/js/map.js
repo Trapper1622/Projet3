@@ -100,10 +100,67 @@ ajaxGet(
       // --------------- function timer réservation ---------------
       // ----------------------------------------------------------
 
-
+      intervalID = setInterval( () => {
+        sectionTimer.style.display = "block";
+        sessionStorage.setItem("station", address);
+        sessionStorage.setItem("timer", time);
+        const {minutes, seconds} = getMinutesAndSeconds(time);
+        textTimer.innerHTML = `Vous avez bien réservé un vélo <span>${address}</span> pour une durée de <span>${minutes}:${seconds}</span>`;
+        time = time -1;
+        if (time === 0) {
+          clearInterval(intervalID);
+          textTimer.innerHTML = `Votre réservation à la station <span>${address}</span> a expiré !`;
+          sessionStorage.clear("station", "timer");
+        }
+      }, 1000);
     });
+
+    // --------------- function storage timer ---------------
+    // ----------------------------------------------------------
+
+    function refresh() {
+      const storageAdress = sessionStorage.getItem("station");
+      let storageTime = sessionStorage.getItem("timer");
+      time = storageTime;
+      if (sessionStorage.length > 1) {
+        sessionStorage.setItem("timer", storageTime);
+        intervalID = setInterval( () => {
+          sectionTimer.style.display = "block";
+          sessionStorage.setItem("station", storageAdress);
+          sessionStorage.setItem("timer", time);
+          const {minutes, seconds} = getMinutesAndSeconds(time);
+          textTimer.innerHTML = `Vous avez bien réservé un vélo <span>${address}</span> pour une durée de <span>${minutes}:${seconds}</span>`;
+          time = time -1;
+          if (time === 0) {
+            clearInterval(intervalID);
+            textTimer.innerHTML = `Votre réservation à la station <span>${storageAdress}</span> a expiré !`;
+            sessionStorage.clear("station", "timer");
+          }
+        }, 1000);
+      }
+    }
+    refresh();
   }
 );
+
+    // --------------- function convertion minutes  ---------------
+    // ------------------------------------------------------------
+
+    const getMinutesAndSeconds = (time) => {
+      let minutes = Math.floor(time / 60);
+      let seconds = time - minute * 60;
+
+    // en dessous de 10 secondes un 0 se met devant les minutes ou les secondes
+      if (seconds < 10) {
+        seconds = `0${seconds}`;
+      }
+      if (minutes < 10) {
+        minutes = `0${minutes}`;
+      }
+      return { minutes, seconds };
+    };
+
+
 
 
 // --------------- inistialisation google map  ---------------
