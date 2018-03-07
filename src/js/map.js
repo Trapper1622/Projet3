@@ -148,7 +148,7 @@ ajaxGet(
 
     const getMinutesAndSeconds = (time) => {
       let minutes = Math.floor(time / 60);
-      let seconds = time - minute * 60;
+      let seconds = time - minutes * 60;
 
     // en dessous de 10 secondes un 0 se met devant les minutes ou les secondes
       if (seconds < 10) {
