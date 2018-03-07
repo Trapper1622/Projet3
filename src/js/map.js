@@ -1,5 +1,19 @@
 /* jshint esversion: 6 */
 
+// --------------- inistialisation google map  ---------------
+// -----------------------------------------------------------
+function initMap() {
+  map = new google.maps.Map(document.querySelector("#map"), {
+    center: {
+      lat: 45.7616,
+      lng: 4.8559
+    },
+    zoom: 13
+  });
+}
+
+// --------------- donnée serveur jcdecaux et mise en place des boutons  ---------------
+// -------------------------------------------------------------------------------------
 ajaxGet(
   "https://api.jcdecaux.com/vls/v1/stations?contract=Lyon&apiKey=1ee3867fba30e0756919f69563ad164308c25536",
   (reponse) => {
@@ -52,7 +66,7 @@ ajaxGet(
           <p>Adresse : <span>${api[i].address}</span></p>
           <p>Etat de la station: <span>${api[i].status}</span></p>
           <p>Vélo disponibles: <span>${api[i].available_bikes}</span></p>
-          <p>Places disponibles: <span>${api[i].available_bikes_stands}</span></p>
+          <p>Places disponibles: <span>${api[i].available_bike_stands}</span></p>
           `;
       });
       markers = markers.concat(marker);
@@ -68,6 +82,7 @@ ajaxGet(
     const buttonConfirm = document.querySelector("#valider");
     const sectionTimer = document.querySelector("#timer");
     const buttonReserver = document.querySelector("#buttonReservation").querySelector("button");
+    const buttonAnnuler = document.querySelector("#annuler");
 
     // --------------- listener button réserver ---------------
     // --------------------------------------------------------
@@ -92,7 +107,7 @@ ajaxGet(
     const textTimer = document.querySelector("#time");
     buttonConfirm.addEventListener("click", function () {
       clearInterval(intervalID);
-      reservation.style.diplay = "none";
+      reservation.style.display = "none";
       sectionTimer.scrollIntoView();
       const address = stationClick.address;
       time = 1200;
@@ -118,30 +133,44 @@ ajaxGet(
     // --------------- function storage timer ---------------
     // ----------------------------------------------------------
 
-    function refresh() {
-      const storageAdress = sessionStorage.getItem("station");
-      let storageTime = sessionStorage.getItem("timer");
-      time = storageTime;
-      if (sessionStorage.length > 1) {
-        sessionStorage.setItem("timer", storageTime);
-        intervalID = setInterval( () => {
-          sectionTimer.style.display = "block";
-          sessionStorage.setItem("station", storageAdress);
-          sessionStorage.setItem("timer", time);
-          const {minutes, seconds} = getMinutesAndSeconds(time);
-          textTimer.innerHTML = `Vous avez bien réservé un vélo <span>${address}</span> pour une durée de <span>${minutes}:${seconds}</span>`;
-          time = time -1;
-          if (time === 0) {
-            clearInterval(intervalID);
-            textTimer.innerHTML = `Votre réservation à la station <span>${storageAdress}</span> a expiré !`;
-            sessionStorage.clear("station", "timer");
-          }
-        }, 1000);
-      }
+  function refresh() {
+    const storageAdress = sessionStorage.getItem("station");
+    let storageTime = sessionStorage.getItem("timer");
+    time = storageTime;
+    if (sessionStorage.length > 1) {
+      sessionStorage.setItem("timer", storageTime);
+      intervalID = setInterval(() => {
+        sectionTimer.style.display = "block";
+        sessionStorage.setItem("station", storageAdress);
+        sessionStorage.setItem("timer", time);
+        const {minutes,seconds} = getMinutesAndSeconds(time);
+        textTimer.innerHTML =  `Vous avez bien réservé un vélo <span>${storageAdress}</span> pour une durée de <span>${minutes}:${seconds}</span>`;
+        time = time - 1;
+        if (time === 0) {
+          clearInterval(intervalID);
+          textTimer.innerHTML = `Votre réservation à la station <span>${storageAdress}</span> a expiré !`;
+          sessionStorage.clear("station", "timer");
+        }
+      }, 1000);
     }
-    refresh();
   }
-);
+  refresh();
+
+  // --------------- Bouton annuler ---------------
+  // -------------------------------------------------------
+
+  buttonAnnuler.addEventListener("click", function () {
+    sessionStorage.clear("station", "timer");
+    clearInterval(intervalID);
+    textTimer.innerHTML = `Votre réservation a bien été annulée`;
+    // disparition de la section timer au bout de 3 secondes
+    setTimeout(function(){
+      sectionTimer.style.display = "none";
+    }, 3000);
+  });
+
+});
+
 
     // --------------- function convertion minutes  ---------------
     // ------------------------------------------------------------
@@ -159,18 +188,3 @@ ajaxGet(
       }
       return { minutes, seconds };
     };
-
-
-
-
-// --------------- inistialisation google map  ---------------
-// -----------------------------------------------------------
-function initMap() {
-  map = new google.maps.Map(document.querySelector("#map"), {
-    center: {
-      lat: 45.7616,
-      lng: 4.8559
-    },
-    zoom: 13
-  });
-}
