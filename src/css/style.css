@@ -18,6 +18,11 @@ h1, h2, h3, h4, h5, h6, p {
   font-family: 'Old Standard TT', serif;
 }
 
+button {
+  background-color: #F1D4AF;
+  color: #774F38;
+}
+
 /* --------------- HEADER --------------- */
 
 header {
