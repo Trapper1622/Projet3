@@ -31,13 +31,31 @@
     <img src="images/Velib-couple.png" alt="couple à velo">
   </header>
 
-  <!-- slider -->
+  <!-- Présentation -->
   <section id="presentation">
     <h1>Bienvenue sur LocaBike</h1>
     <p>Besoin d'un vélo sur lyon ? LocaBike est là pour vous !</p>
+  </section>
+
+  <!-- Slider -->
+  <section id="slider">
     <div id="block-slider">
-      <div id="slider">
-        <img src="images/slider1.png" alt="images explication réservation">
+      <div class="fade">
+        <div><img src="images/slider1.png" alt="capture écran etape 1">
+        </div>
+        <div>
+          <h3><span>Etape 1</span></h3>
+          <p>Des marqueurs indiquent le nombre de stations présentes dans un périmètre donné. Zoomer ou cliquer sur un marqueur pour voir les stations</p>
+        </div>
+      </div>
+      <div class="fade">
+        <div><img src="images/slider2.png" alt="capture écran etape 2">
+        </div>
+        <div>
+          <h3><span>Etape 2</span></h3>
+          <p>Cliquer sur une station pour en avoir les détails dans le panneau d'informations (adresse de la station, nombre de vélos disponibles)</p>
+        </div>
+      </div>
         <div id="flecheGauche">
           <i class="fas fa-chevron-left fa-3x" aria-hidden="true"></i>
         </div>
@@ -45,7 +63,6 @@
           <i class="fas fa-chevron-right fa-3x" aria-hidden="true"></i>
         </div>
       </div>
-    </div>
   </section>
 
   <!-- MAP -->
@@ -84,6 +101,7 @@
     <p>© Copyright 2018 LocaBike</p>
   </footer>
 
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
   <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
   <script type="text/javascript" src="js/main.js"></script>
   <script src="js/ajax.js"></script>

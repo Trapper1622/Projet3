@@ -51,7 +51,34 @@ header img {
 
 /* --------------- SLIDER --------------- */
 
+#slider {
+  position: relative;
+}
+
 #block-slider {
+  margin: 0 auto;
+  max-width: 900px;
+}
+
+.fade:first-of-type {
+  display: flex;
+}
+
+.fade {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+}
+
+.fade div {
+  padding: 20px;
+}
+
+.fade img {
+  width: 100%;
+}
+/* #block-slider {
   display: flex;
   justify-content: center;
 }
@@ -65,6 +92,18 @@ header img {
 #slider img {
   max-width: 100%;
   height: auto;
+}
+
+#slider h2 {
+  position: absolute;
+  top: 20%;
+  left: 5%;
+}
+
+#slider p {
+  position: absolute;
+  top: 20%;
+  left: 40%;
 }
 
 #flecheGauche {
@@ -83,7 +122,7 @@ header img {
 
 #flecheGauche:hover, #flecheDroite:hover {
   color: #ECE5CE;
-}
+} */
 
 /* --------------- MAP --------------- */
 
@@ -183,6 +222,11 @@ header img {
 
 #time span {
   font-weight: bold;
+}
+
+#annuler {
+  display: block;
+  margin: 10px auto;
 }
 
 /* --------------- FOOTER --------------- */
