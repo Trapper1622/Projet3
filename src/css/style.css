@@ -51,78 +51,37 @@ header img {
 
 /* --------------- SLIDER --------------- */
 
-#slider {
-  position: relative;
-}
-
-#block-slider {
-  margin: 0 auto;
-  max-width: 900px;
-}
-
-.fade:first-of-type {
-  display: flex;
-}
-
-.fade {
-  display: none;
-  align-items: center;
-  justify-content: center;
-  padding: 30px;
-}
-
-.fade div {
-  padding: 20px;
-}
-
-.fade img {
-  width: 100%;
-}
-/* #block-slider {
+#block__slider {
   display: flex;
   justify-content: center;
 }
 
 #slider {
+  /* border: 3px solid #E08E79; */
   position: relative;
   max-width: 95%;
-  margin-bottom: 100px;
+  margin-bottom: 120px;
 }
 
 #slider img {
+  border: 3px solid #E08E79;
   max-width: 100%;
   height: auto;
-}
-
-#slider h2 {
-  position: absolute;
-  top: 20%;
-  left: 5%;
-}
-
-#slider p {
-  position: absolute;
-  top: 20%;
-  left: 40%;
 }
 
 #flecheGauche {
   position: absolute;
   top: 45%;
-  left: 2%;
-  color: #E08E79;
+  left: 3%;
+  cursor: pointer;
 }
 
 #flecheDroite {
   position: absolute;
   top: 45%;
-  right: 2%;
-  color: #E08E79;
+  right: 3%;
+  cursor: pointer;
 }
-
-#flecheGauche:hover, #flecheDroite:hover {
-  color: #ECE5CE;
-} */
 
 /* --------------- MAP --------------- */
 
