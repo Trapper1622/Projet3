@@ -105,12 +105,13 @@ ajaxGet(
     let intervalID = 0;
     let time;
     const textTimer = document.querySelector("#time");
-    buttonConfirm.addEventListener("click", function () {
-      clearInterval(intervalID);
-      reservation.style.display = "none";
-      sectionTimer.scrollIntoView();
-      const address = stationClick.address;
-      time = 1200;
+    buttonConfirm.addEventListener("click", () => {
+        clearInterval(intervalID);
+        reservation.style.display = "none";
+        sectionTimer.scrollIntoView();
+        const address = stationClick.address;
+        time = 1200;
+
 
       // --------------- function timer réservation ---------------
       // ----------------------------------------------------------
@@ -157,14 +158,14 @@ ajaxGet(
   refresh();
 
   // --------------- Bouton annuler ---------------
-  // -------------------------------------------------------
+  // ----------------------------------------------
 
-  buttonAnnuler.addEventListener("click", function () {
+  buttonAnnuler.addEventListener("click", () => {
     sessionStorage.clear("station", "timer");
     clearInterval(intervalID);
     textTimer.innerHTML = `Votre réservation a bien été annulée`;
     // disparition de la section timer au bout de 3 secondes
-    setTimeout(function(){
+    setTimeout(function () {
       sectionTimer.style.display = "none";
     }, 3000);
   });

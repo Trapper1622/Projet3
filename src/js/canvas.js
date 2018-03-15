@@ -72,8 +72,10 @@ buttonClear.addEventListener("click", signature.clear);
 signature.canvas.addEventListener("mousedown", (e) => {
   if (e.buttons === 1) signature.start(signature.positionSouris(e));
 });
+const buttonConfirm = document.querySelector("#valider");
 signature.canvas.addEventListener("mouseup", (e) => {
   signature.stop(signature.positionSouris(e));
+  buttonConfirm.style.visibility = "visible";// Permet de faire apparaitre le bouton valider que si il y a signature
 });
 signature.canvas.addEventListener("mousemove", (e) => {
   signature.move(signature.positionSouris(e));
@@ -92,6 +94,7 @@ signature.canvas.addEventListener("touchstart", (e) => {
 });
 signature.canvas.addEventListener("touchend", (e) => {
   if (e.touches.length > 0) signature.stop(signature.positionToucher(e));
+  buttonConfirm.style.visibility = "visible";// Permet de faire apparaitre le bouton valider que si il y a signature
 });
 signature.canvas.addEventListener("touchmove", (e) => {
   if (e.touches.length > 0) signature.move(signature.positionToucher(e));

@@ -51,7 +51,7 @@ header img {
 
 /* --------------- SLIDER --------------- */
 
-#block__slider {
+#block-slider {
   display: flex;
   justify-content: center;
 }
@@ -74,6 +74,7 @@ header img {
   top: 45%;
   left: 3%;
   cursor: pointer;
+  color: #774F38;
 }
 
 #flecheDroite {
@@ -81,6 +82,7 @@ header img {
   top: 45%;
   right: 3%;
   cursor: pointer;
+  color: #774F38;
 }
 
 /* --------------- MAP --------------- */
@@ -159,6 +161,10 @@ header img {
   display: block;
 }
 
+#valider {
+  visibility: hidden;
+}
+
 /* --------------- TIMER --------------- */
 
 #timer {
@@ -199,4 +205,60 @@ footer {
 footer p {
   text-align: center;
   color: #774F38;
+}
+
+/* --------------- Média Query --------------- */
+
+@media screen and (max-width: 960px){
+
+    #flecheGauche, #flecheDroite{
+        font-size: 0.8em;
+    }
+
+    #googleMap{
+        justify-content: initial;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #map{
+        width: 95%;
+        height: 400px;
+    }
+
+    #reservation{
+        height: 600px;
+        width: 75%;
+        margin-top: 20px;
+    }
+}
+
+@media screen and (max-width: 780px){
+
+    #flecheGauche, #flecheDroite{
+        font-size: 0.3em;
+    }
+
+    #googleMap{
+        justify-content: initial;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #map{
+        width: 95%;
+        height: 400px;
+    }
+
+    #reservation{
+        height: 600px;
+        width: 95%;
+        margin-top: 20px;
+    }
+
+    #block-timer{
+        width: 93%;
+        max-width: 99%;
+        padding: 5px;
+    }
 }
